@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Ramsay | Creative Strategist & Technologist</title>
+    <meta name="description" content="Anthony 'RamsayAlmighty' Ramsay is a creative strategist, technologist, and artist exploring the intersection of art, technology, and culture. Through his studio, Studio1204, he experiments with AI, music, and visual media—reimagining how creativity shapes what's next.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anthony Ramsay | Creative Strategist & Technologist">
+    <meta property="og:description" content="Creative strategist, technologist, and artist exploring the intersection of art, technology, and culture.">
+    <meta property="og:url" content="https://anthonyramsay.com">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ramsayalmighty">
+    <meta name="twitter:title" content="Anthony Ramsay">
+    <meta name="twitter:description" content="Creative strategist, technologist, and artist exploring the intersection of art, technology, and culture.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 6rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .main-title {
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 0.95;
+            margin-bottom: 4rem;
+            text-align: left;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .nav-link {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+            cursor: pointer;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            min-height: 100vh;
+            padding: 6rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin-left: auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d4e5f5 0%, #e8d4e8 50%, #f5e5d4 100%);
+            opacity: 0.9;
+        }
+
+        .gallery-item:nth-child(1) .card-bg {
+            background: linear-gradient(135deg, #c8d8e8 0%, #d8c8d8 100%);
+        }
+
+        .gallery-item:nth-child(2) .card-bg {
+            background: linear-gradient(135deg, #b8d0e5 0%, #d0c0d8 100%);
+        }
+
+        .gallery-item:nth-child(3) .card-bg {
+            background: linear-gradient(135deg, #e0c8d8 0%, #d8c8e0 100%);
+        }
+
+        .gallery-item:nth-child(4) .card-bg {
+            background: linear-gradient(135deg, #c8d0d8 0%, #d0c8d0 100%);
+        }
+
+        .card-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 70%;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.4);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .gallery-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .gallery-subtitle {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .control-btn:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        .section-number {
+            position: absolute;
+            bottom: 6rem;
+            left: 6rem;
+            font-size: 8rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.05);
+            letter-spacing: 0.02em;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+
+        .logo {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            font-weight: 300;
+        }
+
+        .top-menu {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .top-menu a {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .top-menu a:hover {
+            color: #fff;
+        }
+
+        .controller-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .controller-icon:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+
+        .controller-icon svg {
+            stroke: rgba(255, 255, 255, 0.7);
+            transition: stroke 0.3s ease;
+        }
+
+        .controller-icon:hover svg {
+            stroke: #fff;
+        }
+
+        .coming-soon-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem 4rem;
+            border-radius: 16px;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .coming-soon-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+
+        .coming-soon-popup h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .coming-soon-popup p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Sound by Ramsay - VFD Display */
+        .sound-section {
+            min-height: 100vh;
+            padding: 6rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+        }
+
+        .vfd-display {
+            max-width: 100%;
+            width: 100%;
+            background: #000;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 3px solid #1a1a1a;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .vfd-top-row {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .time-display {
+            font-size: 3rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.3em;
+        }
+
+        .memory-ams {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.2em;
+        }
+
+        .peak-meter-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .peak-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.2em;
+            text-align: center;
+        }
+
+        .peak-bars {
+            display: flex;
+            gap: 0.3rem;
+            justify-content: center;
+        }
+
+        .peak-bar-row {
+            display: flex;
+            gap: 2px;
+        }
+
+        .peak-segment {
+            width: 25px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: background 0.1s ease;
+        }
+
+        .peak-segment.active-green {
+            background: #fff;
+            box-shadow: 0 0 8px #fff;
+        }
+
+        .peak-segment.active-red {
+            background: #ff3333;
+            box-shadow: 0 0 8px #ff3333;
+        }
+
+        .db-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Courier New', monospace;
+            margin-top: 0.2rem;
+        }
+
+        .vfd-right-indicators {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .vu-indicator {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.3em;
+        }
+
+        .red-lights {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .red-light {
+            width: 40px;
+            height: 8px;
+            background: rgba(255, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .red-light.active {
+            background: #ff0000;
+            box-shadow: 0 0 15px #ff0000;
+        }
+
+        .red-values {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1rem;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            font-family: 'Courier New', monospace;
+        }
+
+        .dolby-nr {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.2em;
+        }
+
+        /* Spectrum Analyzer */
+        .spectrum-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 204, 0, 0.1);
+        }
+
+        .spectrum-analyzer {
+            height: 150px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .spectrum-bar {
+            flex: 1;
+            background: linear-gradient(to top, #ffcc00 0%, #ff9900 50%, #ff6600 100%);
+            min-height: 3px;
+            transition: height 0.08s ease;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        .spectrum-dots {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .spectrum-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffcc00;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ffcc00;
+        }
+
+        /* Bottom Controls Section */
+        .vfd-bottom-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .balance-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .balance-viz {
+            display: flex;
+            gap: 2px;
+        }
+
+        .balance-line {
+            width: 2px;
+            height: 30px;
+            background: rgba(0, 255, 255, 0.3);
+        }
+
+        .balance-line.active {
+            background: #00ffff;
+            box-shadow: 0 0 8px #00ffff;
+        }
+
+        .balance-label {
+            font-size: 0.7rem;
+            color: rgba(0, 255, 255, 0.6);
+            letter-spacing: 0.2em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .control-labels {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .control-box {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            font-size: 0.75rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            letter-spacing: 0.15em;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+
+        .tuner-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .frequency-large {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #ffcc00;
+            text-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1em;
+        }
+
+        .tuner-info-row {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .tuner-label-small {
+            font-size: 1.2rem;
+            color: rgba(0, 255, 255, 0.8);
+            text-shadow: 0 0 10px #00ffff;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.2em;
+        }
+
+        .station-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .station-btn {
+            padding: 0.7rem 1.2rem;
+            background: rgba(0, 255, 102, 0.03);
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            color: #00ff66;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+        }
+
+        .station-btn:hover {
+            background: rgba(0, 255, 102, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+            border-color: rgba(0, 255, 102, 0.6);
+        }
+
+        .station-btn.active {
+            background: rgba(0, 255, 102, 0.2);
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.5);
+            border-color: #00ff66;
+        }
+
+        .now-playing {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 204, 0, 0.05);
+            border: 1px solid rgba(255, 204, 0, 0.2);
+            color: #ffcc00;
+            font-size: 0.7rem;
+            text-shadow: 0 0 10px #ffcc00;
+            font-family: 'Courier New', monospace;
+            min-height: 50px;
+            line-height: 1.8;
+        }
+
+        .sound-content {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sound-content .section-title {
+            text-align: left;
+        }
+
+        .sound-content .section-description {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+
+        /* KW Rising Section */
+        .kw-section {
+            min-height: 100vh;
+            padding: 6rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .kw-section .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .kw-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .kw-stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .kw-stat-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .kw-stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .kw-stat-value {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .kw-community-section {
+            margin-top: 3rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .kw-community-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .kw-community-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .kw-people-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .kw-person-icon {
+            width: 50px;
+            height: 70px;
+            transition: all 0.3s ease;
+        }
+
+        .kw-person-icon.filled .person-head,
+        .kw-person-icon.filled .person-body,
+        .kw-person-icon.filled .person-arm {
+            fill: rgba(255, 255, 255, 0.8);
+            stroke: rgba(255, 255, 255, 0.8);
+        }
+
+        .kw-person-icon .person-head,
+        .kw-person-icon .person-body,
+        .kw-person-icon .person-arm {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: rgba(255, 255, 255, 0.2);
+        }
+
+        .kw-community-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .kw-community-stats span:first-child {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .kw-community-stats span:last-child {
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+
+        .kw-instagram-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .kw-instagram-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Studio Slop Section */
+        .studio-section {
+            min-height: 100vh;
+            padding: 6rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .studio-section .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            background: #1a1a1a;
+            border-radius: 40px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 8px solid #2a2a2a;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .video-card::after {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #333;
+            border-radius: 50%;
+            z-index: 11;
+        }
+
+        .video-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            border-color: #3a3a3a;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .video-platform {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .coming-soon-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .coming-soon-text {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .coming-soon-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .coming-soon-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .play-icon::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #fff;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+
+        /* Swipe Indicators */
+        .swipe-indicators {
+            display: none;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .swipe-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .swipe-dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.2);
+        }
+
+        /* Active Nav State */
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        /* Frosted Glass Overlay for Coming Soon */
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            border-radius: inherit;
+        }
+
+        .coming-soon-overlay h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.3rem;
+        }
+
+        .coming-soon-overlay p {
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .site-footer {
+            padding: 3rem 6rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000;
+        }
+
+        .site-footer p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
+        }
+
+        /* ========== MOBILE RESPONSIVE (MUST BE LAST) ========== */
+        @media (max-width: 768px) {
+            /* ===== GLOBAL RESETS ===== */
+            .hero, .gallery-section, .kw-section, .studio-section, .sound-section {
+                padding: 2rem 1rem !important;
+                min-height: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .hero {
+                padding-top: 5rem !important;
+                min-height: 100vh !important;
+            }
+
+            .main-title {
+                font-size: clamp(2.5rem, 14vw, 4rem) !important;
+                margin-bottom: 2rem !important;
+            }
+
+            /* Top Navigation */
+            .top-nav {
+                padding: 1rem !important;
+            }
+
+            .top-menu {
+                gap: 0.8rem !important;
+            }
+
+            .top-menu a {
+                font-size: 0.65rem !important;
+            }
+
+            .section-header {
+                margin-bottom: 1.5rem !important;
+                width: 100% !important;
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 6vw, 2rem) !important;
+            }
+
+            .section-description {
+                margin-left: 0 !important;
+                max-width: 100% !important;
+            }
+
+            .section-number {
+                display: none !important;
+            }
+
+            /* ===== APPS & PROJECTS - HORIZONTAL SWIPE ===== */
+            .gallery-grid {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 1rem !important;
+                padding: 0 1rem 1rem 1rem !important;
+                margin: 0 -1rem !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+
+            .gallery-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .gallery-item {
+                flex: 0 0 70vw !important;
+                max-width: 260px !important;
+                scroll-snap-align: center !important;
+                aspect-ratio: 3/4 !important;
+            }
+
+            /* ===== SOUND/RADIO SECTION ===== */
+            .sound-section {
+                display: block !important;
+                background: #0a0a0a !important;
+            }
+
+            .vfd-display {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 1rem !important;
+                border-radius: 12px !important;
+            }
+
+            /* Hide complex VFD elements */
+            .vfd-top-row,
+            .peak-meter-section,
+            .vfd-right-indicators,
+            .balance-control,
+            .tuner-section,
+            .db-labels,
+            .dolby-nr,
+            .memory-ams,
+            .time-display,
+            .peak-label,
+            .peak-bars,
+            .vu-indicator,
+            .red-lights,
+            .red-values {
+                display: none !important;
+            }
+
+            .spectrum-section {
+                width: 100% !important;
+                padding: 0.8rem !important;
+                margin: 0 0 1rem 0 !important;
+            }
+
+            .spectrum-analyzer {
+                height: 60px !important;
+            }
+
+            .spectrum-dots {
+                display: none !important;
+            }
+
+            .vfd-bottom-section {
+                display: block !important;
+                width: 100% !important;
+                padding: 0 !important;
+                border: none !important;
+                margin: 0 !important;
+            }
+
+            .station-list {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .station-btn {
+                width: 100% !important;
+                padding: 0.8rem !important;
+                font-size: 0.75rem !important;
+                text-align: center !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .now-playing {
+                width: 100% !important;
+                font-size: 0.7rem !important;
+                padding: 0.8rem !important;
+                text-align: center !important;
+                min-height: auto !important;
+            }
+
+            .sound-content {
+                width: 100% !important;
+                margin-top: 1.5rem !important;
+                padding-top: 1.5rem !important;
+            }
+
+            /* ===== KW RISING SECTION ===== */
+            .kw-stats-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.8rem !important;
+                width: 100% !important;
+            }
+
+            .kw-stat-card {
+                padding: 1rem !important;
+                width: 100% !important;
+            }
+
+            .kw-stat-value {
+                font-size: 1.5rem !important;
+            }
+
+            .kw-stat-label {
+                font-size: 0.6rem !important;
+            }
+
+            .kw-community-section {
+                width: 100% !important;
+                padding: 1.2rem !important;
+                margin-top: 1.5rem !important;
+            }
+
+            .kw-community-title {
+                font-size: 1.5rem !important;
+                white-space: nowrap !important;
+            }
+
+            .kw-community-subtitle {
+                font-size: 0.85rem !important;
+            }
+
+            /* People icons - FORCE HORIZONTAL */
+            .kw-people-icons {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 0.4rem !important;
+                width: 100% !important;
+                margin: 1rem 0 !important;
+            }
+
+            .kw-person-icon {
+                width: 26px !important;
+                height: 38px !important;
+                flex-shrink: 0 !important;
+            }
+
+            .kw-community-stats {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                gap: 2rem !important;
+                width: 100% !important;
+            }
+
+            .kw-instagram-link {
+                display: inline-block !important;
+            }
+
+            /* ===== STUDIO SLOP - HORIZONTAL SWIPE ===== */
+            .video-grid {
+                display: flex !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 0.8rem !important;
+                padding: 0 1rem 1rem 1rem !important;
+                margin: 0 -1rem !important;
+                -webkit-overflow-scrolling: touch !important;
+                max-width: none !important;
+            }
+
+            .video-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .video-card {
+                flex: 0 0 40vw !important;
+                max-width: 150px !important;
+                scroll-snap-align: start !important;
+                aspect-ratio: 9/16 !important;
+                border-radius: 16px !important;
+                border-width: 3px !important;
+            }
+
+            .video-card::before {
+                width: 30px !important;
+                height: 8px !important;
+                top: 6px !important;
+            }
+
+            .video-card::after {
+                width: 4px !important;
+                height: 4px !important;
+                top: 8px !important;
+            }
+
+            .coming-soon-text h3 {
+                font-size: 0.65rem !important;
+            }
+
+            .coming-soon-text p {
+                font-size: 0.45rem !important;
+            }
+
+            /* Popup */
+            .coming-soon-popup {
+                width: 85% !important;
+                max-width: 280px !important;
+                padding: 1.5rem !important;
+            }
+
+            /* Swipe Indicators - Show on mobile */
+            .swipe-indicators {
+                display: flex !important;
+            }
+
+            /* Footer */
+            .site-footer {
+                padding: 2rem 1rem !important;
+            }
+
+            .site-footer p {
+                font-size: 0.75rem !important;
+            }
+
+            /* Frosted overlay adjustments */
+            .coming-soon-overlay h4 {
+                font-size: 0.9rem !important;
+            }
+
+            .coming-soon-overlay p {
+                font-size: 0.6rem !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 380px) {
+            .top-menu a {
+                display: none !important;
+            }
+
+            .gallery-item {
+                flex: 0 0 80vw !important;
+            }
+
+            .kw-person-icon {
+                width: 22px !important;
+                height: 32px !important;
+            }
+
+            .video-card {
+                flex: 0 0 35vw !important;
+                max-width: 120px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Top Navigation -->
+    <nav class="top-nav">
+        <div class="logo">2026 ©</div>
+        <div class="top-menu">
+            <a href="https://www.instagram.com/ramsayalmighty/" target="_blank">INSTAGRAM</a>
+            <a href="https://x.com/ramsayalmighty" target="_blank">X</a>
+            <a href="mailto:builtbyramsay@gmail.com">CONTACT</a>
+            <div class="controller-icon" id="gameController">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 12h4m4 0h4M7 8h10a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5z"/>
+                    <circle cx="9" cy="12" r="1" fill="currentColor"/>
+                    <circle cx="15" cy="12" r="1" fill="currentColor"/>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Popup Overlay and Message -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="coming-soon-popup" id="comingSoonPopup">
+        <h3>GAME COMING SOON</h3>
+        <p>Check back later for something fun</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="main-title">ANTHONY<br>RAMSAY</h1>
+            <nav class="nav-links">
+                <a class="nav-link" href="#built">BUILT BY RAMSAY</a>
+                <a class="nav-link" href="#sound">SOUND BY RAMSAY</a>
+                <a class="nav-link" href="#kw-rising">KW RISING</a>
+                <a class="nav-link" href="#studio">STUDIO SLOP</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Built by Ramsay Gallery Section -->
+    <section class="gallery-section" id="built">
+        <div class="section-header">
+            <div class="section-label">[ BUILT BY RAMSAY ]</div>
+            <h2 class="section-title">Apps & Projects<br>Built with Intention</h2>
+            <p class="section-description">
+                Crafting digital experiences that bridge creativity and functionality, 
+                each project is built with purpose and attention to detail.
+            </p>
+        </div>
+        
+        <div class="gallery-grid" id="projectsCarousel">
+            <div class="gallery-item">
+                <div class="card-bg"></div>
+                <div class="coming-soon-overlay">
+                    <h4>COMING SOON</h4>
+                    <p>Project</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="card-bg"></div>
+                <div class="coming-soon-overlay">
+                    <h4>COMING SOON</h4>
+                    <p>Project</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="card-bg"></div>
+                <div class="coming-soon-overlay">
+                    <h4>COMING SOON</h4>
+                    <p>Project</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="card-bg"></div>
+                <div class="coming-soon-overlay">
+                    <h4>COMING SOON</h4>
+                    <p>Project</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Swipe Indicators for Projects -->
+        <div class="swipe-indicators" id="projectsDots">
+            <div class="swipe-dot active"></div>
+            <div class="swipe-dot"></div>
+            <div class="swipe-dot"></div>
+            <div class="swipe-dot"></div>
+        </div>
+
+        <div class="section-number">01</div>
+    </section>
+
+    <!-- Sound by Ramsay Section -->
+    <section class="sound-section" id="sound">
+        <div class="vfd-display">
+            <!-- Top Row -->
+            <div class="vfd-top-row">
+                <div>
+                    <div class="time-display" id="timeDisplay">12:00</div>
+                    <div class="memory-ams">
+                        <span>MEMORY</span>
+                        <span>AMS</span>
+                    </div>
+                </div>
+
+                <div class="peak-meter-section">
+                    <div class="peak-label">PEAK LEVEL METER</div>
+                    <div class="peak-bars">
+                        <div class="peak-bar-row" id="peakMeterL">
+                            <div class="peak-segment"></div>
+                            <div class="peak-segment"></div>
+                            <div class="peak-segment"></div>
+                            <div class="peak-segment"></div>
+                            <div class="peak-segment"></div>
+                            <div class="peak-segment"></div>
+                        </div>
+                    </div>
+                    <div class="db-labels">
+                        <span>dB</span>
+                        <span>-∞</span>
+                        <span>-20</span>
+                        <span>-15</span>
+                        <span>-10</span>
+                        <span>-7</span>
+                        <span>-5</span>
+                        <span>-3</span>
+                        <span>-1</span>
+                    </div>
+                </div>
+
+                <div class="vfd-right-indicators">
+                    <div class="vu-indicator">OVU00</div>
+                    <div class="red-lights">
+                        <div class="red-light"></div>
+                        <div class="red-light"></div>
+                        <div class="red-light"></div>
+                    </div>
+                    <div class="red-values">
+                        <span>0</span>
+                        <span>+1</span>
+                        <span>+3</span>
+                        <span>+5</span>
+                        <span>+8</span>
+                    </div>
+                    <div class="dolby-nr">DOLBY NR</div>
+                </div>
+            </div>
+
+            <!-- Spectrum Analyzer -->
+            <div class="spectrum-section">
+                <div class="spectrum-analyzer" id="spectrumAnalyzer">
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-bar"></div>
+                </div>
+                <div class="spectrum-dots">
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                    <div class="spectrum-dot"></div>
+                </div>
+            </div>
+
+            <!-- Bottom Controls Section -->
+            <div class="vfd-bottom-section">
+                <div class="balance-control">
+                    <div class="balance-viz">
+                        <div class="balance-line"></div>
+                        <div class="balance-line"></div>
+                        <div class="balance-line active"></div>
+                        <div class="balance-line active"></div>
+                        <div class="balance-line active"></div>
+                        <div class="balance-line"></div>
+                        <div class="balance-line"></div>
+                    </div>
+                    <div class="control-labels">
+                        <span class="balance-label">BALANCE</span>
+                        <div class="control-box">ACOUSTIC</div>
+                        <div class="control-box">VOLUME</div>
+                        <div class="control-box">BALANCE</div>
+                        <div class="control-box">FADE</div>
+                    </div>
+                </div>
+
+                <div class="tuner-section">
+                    <div class="frequency-large" id="freqDisplay">87.00</div>
+                    <div class="tuner-info-row">
+                        <span class="tuner-label-small">TUNE</span>
+                        <span class="tuner-label-small">6</span>
+                        <span class="tuner-label-small">FM</span>
+                        <span class="tuner-label-small">MHz</span>
+                    </div>
+                </div>
+
+                <div class="station-list">
+                    <button class="station-btn" data-station="https://stream.revma.ihrhls.com/zc7729" data-freq="97.1">HOT 97 - NYC</button>
+                    <button class="station-btn" data-station="https://stream.revma.ihrhls.com/zc4868" data-freq="105.9">POWER 106 - LA</button>
+                    <button class="station-btn" data-station="https://stream.revma.ihrhls.com/zc209" data-freq="107.5">WGCI - CHICAGO</button>
+                    <button class="station-btn" data-station="https://stream.revma.ihrhls.com/zc6892" data-freq="107.9">THE BEAT - ATL</button>
+                    <button class="station-btn" data-station="https://live.leanstream.co/CFXJFM" data-freq="93.5">FLOW 93.5 - TORONTO</button>
+                    <button class="station-btn" data-station="https://media-ice.musicradio.com/CapitalXTRAUKMP3" data-freq="96.9">CAPITAL XTRA - LONDON</button>
+                    <div class="now-playing" id="nowPlaying">SELECT A STATION TO BEGIN...</div>
+                </div>
+            </div>
+
+            <div class="sound-content">
+                <div class="section-label">[ SOUND BY RAMSAY ]</div>
+                <h2 class="section-title">Audio Production<br>& Sound Design</h2>
+                <p class="section-description">
+                    Creating sonic landscapes and audio experiences that resonate. 
+                    From music production to sound design for digital experiences.
+                </p>
+            </div>
+        </div>
+
+        <div class="section-number">02</div>
+    </section>
+
+    <audio id="radioPlayer" preload="none" crossorigin="anonymous"></audio>
+
+    <!-- KW Rising Section -->
+    <section class="kw-section" id="kw-rising">
+        <div class="section-header">
+            <div class="section-label">[ KW RISING ]</div>
+            <h2 class="section-title">Community Impact<br>Dashboard</h2>
+            <p class="section-description">
+                Showcasing the Kitchener-Waterloo community through authentic storytelling 
+                and local culture on Instagram, connecting people and celebrating what makes KW unique.
+            </p>
+        </div>
+
+        <div class="kw-stats-grid">
+            <div class="kw-stat-card">
+                <div class="kw-stat-label">Posts</div>
+                <div class="kw-stat-value">770</div>
+            </div>
+
+            <div class="kw-stat-card">
+                <div class="kw-stat-label">Followers</div>
+                <div class="kw-stat-value">15.1K</div>
+            </div>
+
+            <div class="kw-stat-card">
+                <div class="kw-stat-label">Engagement</div>
+                <div class="kw-stat-value">4.3%</div>
+            </div>
+
+            <div class="kw-stat-card">
+                <div class="kw-stat-label">Avg Likes</div>
+                <div class="kw-stat-value">650</div>
+            </div>
+        </div>
+
+        <div class="kw-community-section">
+            <h3 class="kw-community-title">1 out of 10</h3>
+            <p class="kw-community-subtitle">people you pass in Kitchener-Waterloo follow @kwrising</p>
+
+            <div class="kw-people-icons">
+                <svg class="kw-person-icon filled" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+                <svg class="kw-person-icon" viewBox="0 0 70 90">
+                    <circle class="person-head" cx="35" cy="22" r="14" stroke-width="2"/>
+                    <rect class="person-body" x="20" y="39" width="30" height="40" rx="4" stroke-width="2"/>
+                    <rect class="person-arm" x="8" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                    <rect class="person-arm" x="50" y="42" width="12" height="24" rx="6" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <div class="kw-community-stats">
+                <div>
+                    <span>KW Population:</span>
+                    <span>380K</span>
+                </div>
+                <div>
+                    <span>Penetration:</span>
+                    <span>4.0%</span>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://instagram.com/kwrising" target="_blank" class="kw-instagram-link">
+                    Follow @kwrising
+                </a>
+            </div>
+        </div>
+
+        <div class="section-number">03</div>
+    </section>
+
+    <!-- Studio Slop Section -->
+    <section class="studio-section" id="studio">
+        <div class="section-header">
+            <div class="section-label">[ STUDIO SLOP ]</div>
+            <h2 class="section-title">Video Content<br>& Creative Experiments</h2>
+            <p class="section-description">
+                Short-form content and creative explorations. 
+                Raw, authentic, and unfiltered creative work.
+            </p>
+        </div>
+
+        <div class="video-grid" id="videosCarousel">
+            <div class="video-card coming-soon-card">
+                <div class="coming-soon-text">
+                    <h3>COMING SOON</h3>
+                    <p>Video</p>
+                </div>
+            </div>
+
+            <div class="video-card coming-soon-card">
+                <div class="coming-soon-text">
+                    <h3>COMING SOON</h3>
+                    <p>Video</p>
+                </div>
+            </div>
+
+            <div class="video-card coming-soon-card">
+                <div class="coming-soon-text">
+                    <h3>COMING SOON</h3>
+                    <p>Video</p>
+                </div>
+            </div>
+
+            <div class="video-card coming-soon-card">
+                <div class="coming-soon-text">
+                    <h3>COMING SOON</h3>
+                    <p>Video</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Swipe Indicators for Videos -->
+        <div class="swipe-indicators" id="videosDots">
+            <div class="swipe-dot active"></div>
+            <div class="swipe-dot"></div>
+            <div class="swipe-dot"></div>
+            <div class="swipe-dot"></div>
+        </div>
+
+        <div class="section-number">04</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Website Built by Ramsay 2026</p>
+    </footer>
+
+    <script>
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = `${hours}:${minutes}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Game controller popup
+        const gameController = document.getElementById('gameController');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const comingSoonPopup = document.getElementById('comingSoonPopup');
+
+        gameController.addEventListener('click', () => {
+            popupOverlay.classList.add('show');
+            comingSoonPopup.classList.add('show');
+        });
+
+        popupOverlay.addEventListener('click', () => {
+            popupOverlay.classList.remove('show');
+            comingSoonPopup.classList.remove('show');
+        });
+
+        comingSoonPopup.addEventListener('click', () => {
+            popupOverlay.classList.remove('show');
+            comingSoonPopup.classList.remove('show');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Radio player functionality with visualizations
+        const radioPlayer = document.getElementById('radioPlayer');
+        const nowPlaying = document.getElementById('nowPlaying');
+        const freqDisplay = document.getElementById('freqDisplay');
+        const stationButtons = document.querySelectorAll('.station-btn');
+        const spectrumBars = document.querySelectorAll('.spectrum-bar');
+        const peakSegments = document.querySelectorAll('.peak-segment');
+        const redLights = document.querySelectorAll('.red-light');
+        let currentStation = null;
+        let animationInterval = null;
+        let peakInterval = null;
+
+        // Animate spectrum analyzer
+        function animateSpectrum() {
+            spectrumBars.forEach((bar, index) => {
+                const randomHeight = Math.random() * 100 + 15;
+                const delay = index * 0.015;
+                setTimeout(() => {
+                    bar.style.height = randomHeight + '%';
+                }, delay * 1000);
+            });
+        }
+
+        // Animate peak meters
+        function animatePeakMeter() {
+            const activeCount = Math.floor(Math.random() * 6) + 1;
+            peakSegments.forEach((segment, index) => {
+                if (index < activeCount) {
+                    if (index < 5) {
+                        segment.classList.add('active-green');
+                        segment.classList.remove('active-red');
+                    } else {
+                        segment.classList.add('active-red');
+                        segment.classList.remove('active-green');
+                    }
+                } else {
+                    segment.classList.remove('active-green', 'active-red');
+                }
+            });
+
+            // Animate red lights
+            const redCount = Math.floor(Math.random() * 3);
+            redLights.forEach((light, index) => {
+                if (index < redCount) {
+                    light.classList.add('active');
+                } else {
+                    light.classList.remove('active');
+                }
+            });
+        }
+
+        // Start visualizations
+        function startVisualizations() {
+            if (animationInterval) clearInterval(animationInterval);
+            if (peakInterval) clearInterval(peakInterval);
+            
+            animationInterval = setInterval(animateSpectrum, 90);
+            peakInterval = setInterval(animatePeakMeter, 140);
+        }
+
+        // Stop visualizations
+        function stopVisualizations() {
+            if (animationInterval) clearInterval(animationInterval);
+            if (peakInterval) clearInterval(peakInterval);
+            
+            spectrumBars.forEach(bar => bar.style.height = '3px');
+            peakSegments.forEach(segment => {
+                segment.classList.remove('active-green', 'active-red');
+            });
+            redLights.forEach(light => light.classList.remove('active'));
+        }
+
+        stationButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const stationUrl = this.getAttribute('data-station');
+                const stationName = this.textContent;
+                const frequency = this.getAttribute('data-freq');
+
+                // Update frequency display
+                freqDisplay.textContent = frequency;
+
+                // Remove active class from all buttons
+                stationButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // If clicking the same station, toggle play/pause
+                if (currentStation === stationUrl) {
+                    if (radioPlayer.paused) {
+                        radioPlayer.play();
+                        nowPlaying.textContent = `♫ NOW PLAYING: ${stationName}`;
+                        startVisualizations();
+                    } else {
+                        radioPlayer.pause();
+                        nowPlaying.textContent = `⏸ PAUSED: ${stationName}`;
+                        stopVisualizations();
+                    }
+                } else {
+                    // Load and play new station via proxy (bypasses CORS)
+                    currentStation = stationUrl;
+                    radioPlayer.src = '/radio?url=' + encodeURIComponent(stationUrl);
+                    nowPlaying.textContent = `⏳ TUNING TO: ${stationName}`;
+                    
+                    radioPlayer.load();
+                    radioPlayer.play().then(() => {
+                        nowPlaying.textContent = `♫ NOW PLAYING: ${stationName}`;
+                        startVisualizations();
+                    }).catch(err => {
+                        nowPlaying.textContent = `⚠ ERROR: CANNOT CONNECT TO ${stationName}`;
+                        stopVisualizations();
+                        console.error('Playback error:', err);
+                    });
+                }
+            });
+        });
+
+        // Update display when audio starts playing
+        radioPlayer.addEventListener('playing', () => {
+            const activeBtn = document.querySelector('.station-btn.active');
+            if (activeBtn) {
+                nowPlaying.textContent = `♫ NOW PLAYING: ${activeBtn.textContent}`;
+                startVisualizations();
+            }
+        });
+
+        // Handle loading state
+        radioPlayer.addEventListener('waiting', () => {
+            const activeBtn = document.querySelector('.station-btn.active');
+            if (activeBtn) {
+                nowPlaying.textContent = `⏳ BUFFERING: ${activeBtn.textContent}`;
+            }
+        });
+
+        // Stop visualizations when paused
+        radioPlayer.addEventListener('pause', () => {
+            stopVisualizations();
+        });
+
+        // ========== ACTIVE NAV STATE ON SCROLL ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function updateActiveNav() {
+            const scrollY = window.scrollY + 150;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+
+        // ========== SWIPE INDICATORS ==========
+        function setupSwipeIndicators(carouselId, dotsId) {
+            const carousel = document.getElementById(carouselId);
+            const dots = document.querySelectorAll('#' + dotsId + ' .swipe-dot');
+            
+            if (!carousel || dots.length === 0) return;
+
+            carousel.addEventListener('scroll', () => {
+                const scrollLeft = carousel.scrollLeft;
+                const itemWidth = carousel.children[0]?.offsetWidth || 1;
+                const gap = 16; // approximate gap
+                const activeIndex = Math.round(scrollLeft / (itemWidth + gap));
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            });
+        }
+
+        setupSwipeIndicators('projectsCarousel', 'projectsDots');
+        setupSwipeIndicators('videosCarousel', 'videosDots');
+    </script>
+</body>
+</html>
