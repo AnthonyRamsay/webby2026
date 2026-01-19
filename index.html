@@ -568,52 +568,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .balance-control {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .balance-viz {
-            display: flex;
-            gap: 2px;
-        }
-
-        .balance-line {
-            width: 2px;
-            height: 30px;
-            background: rgba(0, 255, 255, 0.3);
-        }
-
-        .balance-line.active {
-            background: #00ffff;
-            box-shadow: 0 0 8px #00ffff;
-        }
-
-        .balance-label {
-            font-size: 0.7rem;
-            color: rgba(0, 255, 255, 0.6);
-            letter-spacing: 0.2em;
-            font-family: 'Courier New', monospace;
-        }
-
-        .control-labels {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .control-box {
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            font-size: 0.75rem;
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff;
-            letter-spacing: 0.15em;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-        }
-
         .tuner-section {
             display: flex;
             flex-direction: column;
@@ -1169,7 +1123,6 @@
             .vfd-top-row,
             .peak-meter-section,
             .vfd-right-indicators,
-            .balance-control,
             .tuner-section,
             .db-labels,
             .dolby-nr,
@@ -1591,27 +1544,8 @@
                 </div>
             </div>
 
-            <!-- Bottom Controls Section -->
+            <!-- Tuner Section -->
             <div class="vfd-bottom-section">
-                <div class="balance-control">
-                    <div class="balance-viz">
-                        <div class="balance-line"></div>
-                        <div class="balance-line"></div>
-                        <div class="balance-line active"></div>
-                        <div class="balance-line active"></div>
-                        <div class="balance-line active"></div>
-                        <div class="balance-line"></div>
-                        <div class="balance-line"></div>
-                    </div>
-                    <div class="control-labels">
-                        <span class="balance-label">BALANCE</span>
-                        <div class="control-box">ACOUSTIC</div>
-                        <div class="control-box">VOLUME</div>
-                        <div class="control-box">BALANCE</div>
-                        <div class="control-box">FADE</div>
-                    </div>
-                </div>
-
                 <div class="tuner-section">
                     <div class="frequency-large" id="freqDisplay">87.00</div>
                     <div class="tuner-info-row">
