@@ -42,7 +42,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 4rem 6rem;
+            padding: 3rem 4rem;
             position: relative;
         }
 
@@ -56,14 +56,14 @@
             font-weight: 300;
             letter-spacing: 0.02em;
             line-height: 0.95;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
             text-align: left;
         }
 
         .nav-links {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             align-items: flex-start;
         }
 
@@ -100,8 +100,8 @@
 
         /* Gallery Section */
         .gallery-section {
-            min-height: 100vh;
-            padding: 6rem;
+            min-height: auto;
+            padding: 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -109,7 +109,7 @@
         }
 
         .section-header {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-label {
@@ -125,7 +125,7 @@
             font-weight: 300;
             letter-spacing: 0.02em;
             line-height: 1.2;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .section-description {
@@ -139,8 +139,8 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .gallery-item {
@@ -383,8 +383,8 @@
 
         /* Sound by Ramsay - VFD Display */
         .sound-section {
-            min-height: 100vh;
-            padding: 6rem;
+            min-height: auto;
+            padding: 4rem;
             position: relative;
             display: flex;
             align-items: center;
@@ -661,8 +661,8 @@
 
         /* KW Rising Section */
         .kw-section {
-            min-height: 100vh;
-            padding: 6rem;
+            min-height: auto;
+            padding: 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -670,14 +670,14 @@
         }
 
         .kw-section .section-header {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .kw-stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .kw-stat-card {
@@ -796,8 +796,8 @@
 
         /* Studio Slop Section */
         .studio-section {
-            min-height: 100vh;
-            padding: 6rem;
+            min-height: auto;
+            padding: 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -805,13 +805,13 @@
         }
 
         .studio-section .section-header {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
 
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
+            gap: 1.5rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -988,37 +988,133 @@
             width: 100%;
         }
 
-        /* Frosted Glass Overlay for Coming Soon */
-        .coming-soon-overlay {
-            position: absolute;
+        /* App Signup Modal */
+        .app-modal-overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            z-index: 5;
-            border-radius: inherit;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
-        .coming-soon-overlay h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            color: rgba(0, 0, 0, 0.7);
-            margin-bottom: 0.3rem;
+        .app-modal-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
         }
 
-        .coming-soon-overlay p {
-            font-size: 0.75rem;
+        .app-modal {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .app-modal-overlay.show .app-modal {
+            transform: scale(1);
+        }
+
+        .app-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
             color: rgba(0, 0, 0, 0.5);
+        }
+
+        .app-modal h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .app-modal .app-tagline {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .app-modal .coming-soon-badge {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-modal p {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .app-modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .app-modal input[type="email"] {
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .app-modal input[type="email"]:focus {
+            border-color: #000;
+        }
+
+        .app-modal button[type="submit"] {
+            padding: 1rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .app-modal button[type="submit"]:hover {
+            background: #333;
+        }
+
+        .app-modal .success-message {
+            color: #22c55e;
+            font-weight: 600;
+            display: none;
+        }
+
+        .app-modal .success-message.show {
+            display: block;
         }
 
         /* Footer */
@@ -1768,6 +1864,22 @@
         <p>Website Built by Ramsay 2026</p>
     </footer>
 
+    <!-- App Signup Modal -->
+    <div class="app-modal-overlay" id="appModal">
+        <div class="app-modal">
+            <h3 id="modalAppName">App Name</h3>
+            <p class="app-tagline" id="modalAppTagline">Tagline here</p>
+            <span class="coming-soon-badge">COMING SOON</span>
+            <p>Be the first to know when this launches. Sign up for early access.</p>
+            <form id="appSignupForm">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="hidden" name="app" id="modalAppHidden">
+                <button type="submit">NOTIFY ME</button>
+            </form>
+            <p class="success-message" id="signupSuccess">Thanks! We'll notify you when it launches.</p>
+        </div>
+    </div>
+
     <script>
         // Update clock
         function updateClock() {
@@ -1999,6 +2111,79 @@
 
         setupSwipeIndicators('projectsCarousel', 'projectsDots');
         setupSwipeIndicators('videosCarousel', 'videosDots');
+
+        // ========== APP SIGNUP MODAL ==========
+        const appModal = document.getElementById('appModal');
+        const modalAppName = document.getElementById('modalAppName');
+        const modalAppTagline = document.getElementById('modalAppTagline');
+        const modalAppHidden = document.getElementById('modalAppHidden');
+        const appSignupForm = document.getElementById('appSignupForm');
+        const signupSuccess = document.getElementById('signupSuccess');
+
+        // App data
+        const appData = {
+            'LORE': 'Where stories keep living',
+            'AURA FARM': 'Your 15 minutes of fame is here',
+            'GOWEAR': 'What to wear, right now',
+            'DuoTing': 'Patois Made Easy'
+        };
+
+        // Click handlers for gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const titleEl = item.querySelector('.gallery-title');
+                const taglineEl = item.querySelector('.gallery-subtitle');
+                
+                if (titleEl) {
+                    const appName = titleEl.textContent;
+                    const tagline = taglineEl ? taglineEl.textContent : appData[appName] || '';
+                    
+                    modalAppName.textContent = appName;
+                    modalAppTagline.textContent = tagline;
+                    modalAppHidden.value = appName;
+                    signupSuccess.classList.remove('show');
+                    appSignupForm.style.display = 'flex';
+                    appSignupForm.reset();
+                    appModal.classList.add('show');
+                }
+            });
+        });
+
+        // Close modal on overlay click
+        appModal.addEventListener('click', (e) => {
+            if (e.target === appModal) {
+                appModal.classList.remove('show');
+            }
+        });
+
+        // Handle form submission
+        appSignupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(appSignupForm);
+            const email = formData.get('email');
+            const app = formData.get('app');
+
+            // Store in localStorage (can be replaced with actual backend)
+            const signups = JSON.parse(localStorage.getItem('appSignups') || '[]');
+            signups.push({ email, app, date: new Date().toISOString() });
+            localStorage.setItem('appSignups', JSON.stringify(signups));
+
+            // Show success message
+            appSignupForm.style.display = 'none';
+            signupSuccess.classList.add('show');
+
+            // Close modal after delay
+            setTimeout(() => {
+                appModal.classList.remove('show');
+            }, 2000);
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                appModal.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
