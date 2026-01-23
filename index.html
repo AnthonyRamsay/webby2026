@@ -404,6 +404,11 @@
         .sound-header {
             max-width: 1200px;
             margin: 0 auto 1.5rem auto;
+            text-align: left;
+        }
+
+        .sound-header .section-title {
+            text-align: left;
         }
 
         .sound-header .section-label {
@@ -559,23 +564,33 @@
 
         /* KW Rising Section */
         .kw-section {
-            min-height: 100vh;
-            padding: 4rem;
+            height: 100vh;
+            padding: 5rem 4rem 2rem 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            overflow: hidden;
         }
 
         .kw-section .section-header {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .kw-section .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .kw-section .section-description {
+            font-size: 0.9rem;
         }
 
         .kw-stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .kw-stat-card {
@@ -694,24 +709,35 @@
 
         /* Studio Slop Section */
         .studio-section {
-            min-height: 100vh;
-            padding: 4rem;
+            height: 100vh;
+            padding: 5rem 4rem 2rem 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            overflow: hidden;
         }
 
         .studio-section .section-header {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .studio-section .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .studio-section .section-description {
+            font-size: 0.9rem;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
             max-width: 1400px;
             margin: 0 auto;
+            flex: 1;
         }
 
         .video-card {
