@@ -110,7 +110,23 @@
         }
 
         .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
             margin-bottom: 2rem;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .section-header .section-description {
+            flex: 1;
+            max-width: 400px;
+            margin: 0;
+            text-align: left;
+            padding-top: 1.5rem;
         }
 
         .section-label {
@@ -1083,8 +1099,15 @@
             }
 
             .section-header {
+                flex-direction: column !important;
+                gap: 1rem !important;
                 margin-bottom: 1.5rem !important;
                 width: 100% !important;
+            }
+
+            .section-header .section-description {
+                max-width: 100% !important;
+                padding-top: 0 !important;
             }
 
             .section-title {
@@ -1376,8 +1399,10 @@
     <!-- Built by Ramsay Gallery Section -->
     <section class="gallery-section" id="built">
         <div class="section-header">
-            <div class="section-label">[ BUILT BY RAMSAY ]</div>
-            <h2 class="section-title">Apps & Projects<br>Built with Intention</h2>
+            <div class="header-left">
+                <div class="section-label">[ BUILT BY RAMSAY ]</div>
+                <h2 class="section-title">Apps & Projects<br>Built with Intention</h2>
+            </div>
             <p class="section-description">
                 Crafting digital experiences that bridge creativity and functionality, 
                 each project is built with purpose and attention to detail.
@@ -1486,8 +1511,10 @@
     <!-- KW Rising Section -->
     <section class="kw-section" id="kw-rising">
         <div class="section-header">
-            <div class="section-label">[ KW RISING ]</div>
-            <h2 class="section-title">Community Impact<br>Dashboard</h2>
+            <div class="header-left">
+                <div class="section-label">[ KW RISING ]</div>
+                <h2 class="section-title">Community Impact<br>Dashboard</h2>
+            </div>
             <p class="section-description">
                 Showcasing the Kitchener-Waterloo community through authentic storytelling 
                 and local culture on Instagram, connecting people and celebrating what makes KW unique.
@@ -1607,8 +1634,10 @@
     <!-- Studio Slop Section -->
     <section class="studio-section" id="studio">
         <div class="section-header">
-            <div class="section-label">[ STUDIO SLOP ]</div>
-            <h2 class="section-title">Video Content<br>& Creative Experiments</h2>
+            <div class="header-left">
+                <div class="section-label">[ STUDIO SLOP ]</div>
+                <h2 class="section-title">Video Content<br>& Creative Experiments</h2>
+            </div>
             <p class="section-description">
                 Short-form content and creative explorations. 
                 Raw, authentic, and unfiltered creative work.
