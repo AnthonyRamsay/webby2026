@@ -385,282 +385,144 @@
             pointer-events: auto;
         }
 
-        /* Sound by Ramsay - VFD Display */
+        /* Sound by Ramsay - Album Display */
         .sound-section {
             min-height: auto;
             padding: 4rem;
             position: relative;
+            background: #f5f5f5;
+        }
+
+        .album-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .album-artwork {
+            position: relative;
+            background: #e0e0e0;
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0a0a0a;
+            padding: 2rem;
         }
 
-        .vfd-display {
+        .album-artwork img {
             max-width: 100%;
-            width: 100%;
-            background: #000;
-            padding: 3rem;
-            border-radius: 20px;
-            border: 3px solid #1a1a1a;
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .vfd-top-row {
-            display: grid;
-            grid-template-columns: 200px 1fr 200px;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            align-items: center;
-        }
-
-        .time-display {
-            font-size: 3rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.8);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.3em;
-        }
-
-        .memory-ams {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.2em;
-        }
-
-        .peak-meter-section {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .peak-label {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 0.2em;
-            text-align: center;
-        }
-
-        .peak-bars {
-            display: flex;
-            gap: 0.3rem;
-            justify-content: center;
-        }
-
-        .peak-bar-row {
-            display: flex;
-            gap: 2px;
-        }
-
-        .peak-segment {
-            width: 25px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            transition: background 0.1s ease;
-        }
-
-        .peak-segment.active-green {
-            background: #fff;
-            box-shadow: 0 0 8px #fff;
-        }
-
-        .peak-segment.active-red {
-            background: #ff3333;
-            box-shadow: 0 0 8px #ff3333;
-        }
-
-        .db-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.6rem;
-            color: rgba(255, 255, 255, 0.4);
-            font-family: 'Courier New', monospace;
-            margin-top: 0.2rem;
-        }
-
-        .vfd-right-indicators {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: flex-end;
-        }
-
-        .vu-indicator {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.3em;
-        }
-
-        .red-lights {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .red-light {
-            width: 40px;
-            height: 8px;
-            background: rgba(255, 0, 0, 0.2);
-            transition: all 0.2s ease;
-        }
-
-        .red-light.active {
-            background: #ff0000;
-            box-shadow: 0 0 15px #ff0000;
-        }
-
-        .red-values {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 1rem;
-            color: #ff0000;
-            text-shadow: 0 0 10px #ff0000;
-            font-family: 'Courier New', monospace;
-        }
-
-        .dolby-nr {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.2em;
-        }
-
-        /* Spectrum Analyzer */
-        .spectrum-section {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 204, 0, 0.1);
-        }
-
-        .spectrum-analyzer {
-            height: 150px;
-            display: flex;
-            align-items: flex-end;
-            gap: 3px;
-            margin-bottom: 0.5rem;
-        }
-
-        .spectrum-bar {
-            flex: 1;
-            background: linear-gradient(to top, #ffcc00 0%, #ff9900 50%, #ff6600 100%);
-            min-height: 3px;
-            transition: height 0.08s ease;
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-        }
-
-        .spectrum-dots {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.5rem;
-        }
-
-        .spectrum-dot {
-            width: 6px;
-            height: 6px;
-            background: #ffcc00;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #ffcc00;
-        }
-
-        /* Bottom Controls Section */
-        .vfd-bottom-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .tuner-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .frequency-large {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: #ffcc00;
-            text-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.1em;
-        }
-
-        .tuner-info-row {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .tuner-label-small {
-            font-size: 1.2rem;
-            color: rgba(0, 255, 255, 0.8);
-            text-shadow: 0 0 10px #00ffff;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.2em;
-        }
-
-        .station-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .station-btn {
-            padding: 0.7rem 1.2rem;
-            background: rgba(0, 255, 102, 0.03);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            color: #00ff66;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+        .album-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-            font-family: 'Courier New', monospace;
-        }
-
-        .station-btn:hover {
-            background: rgba(0, 255, 102, 0.1);
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
-            border-color: rgba(0, 255, 102, 0.6);
-        }
-
-        .station-btn.active {
-            background: rgba(0, 255, 102, 0.2);
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.5);
-            border-color: #00ff66;
-        }
-
-        .now-playing {
-            margin-top: 1rem;
             padding: 1rem;
-            background: rgba(255, 204, 0, 0.05);
-            border: 1px solid rgba(255, 204, 0, 0.2);
-            color: #ffcc00;
-            font-size: 0.7rem;
-            text-shadow: 0 0 10px #ffcc00;
-            font-family: 'Courier New', monospace;
-            min-height: 50px;
-            line-height: 1.8;
+            transition: color 0.3s ease;
         }
 
-        .sound-content {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .album-nav:hover {
+            color: rgba(0, 0, 0, 0.6);
         }
 
-        .sound-content .section-title {
-            text-align: left;
+        .album-nav.prev {
+            left: 0;
         }
 
-        .sound-content .section-description {
-            margin-left: 0;
-            margin-top: 1rem;
+        .album-nav.next {
+            right: 0;
+        }
+
+        .album-counter {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .album-info {
+            padding: 2rem 0;
+            color: #000;
+        }
+
+        .album-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .album-date {
+            font-size: 1.1rem;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.25rem;
+        }
+
+        .album-duration {
+            font-size: 1.1rem;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .album-credits {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .album-actions {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .album-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #000;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .album-action:hover {
+            padding-left: 0.5rem;
+        }
+
+        .album-action .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .album-action.disabled {
+            color: rgba(0, 0, 0, 0.3);
+            cursor: not-allowed;
+        }
+
+        .album-action.disabled:hover {
+            padding-left: 0;
+        }
+
+        .album-action.disabled .dot {
+            background: rgba(0, 0, 0, 0.2);
         }
 
         /* KW Rising Section */
@@ -1208,84 +1070,46 @@
                 aspect-ratio: 3/4 !important;
             }
 
-            /* ===== SOUND/RADIO SECTION ===== */
+            /* ===== SOUND/ALBUM SECTION ===== */
             .sound-section {
-                display: block !important;
-                background: #0a0a0a !important;
+                background: #f5f5f5 !important;
             }
 
-            .vfd-display {
-                width: 100% !important;
-                max-width: 100% !important;
+            .album-container {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            .album-artwork {
+                aspect-ratio: 1 !important;
                 padding: 1rem !important;
-                border-radius: 12px !important;
             }
 
-            /* Hide complex VFD elements */
-            .vfd-top-row,
-            .peak-meter-section,
-            .vfd-right-indicators,
-            .tuner-section,
-            .db-labels,
-            .dolby-nr,
-            .memory-ams,
-            .time-display,
-            .peak-label,
-            .peak-bars,
-            .vu-indicator,
-            .red-lights,
-            .red-values {
-                display: none !important;
+            .album-nav {
+                font-size: 1.5rem !important;
+                padding: 0.5rem !important;
             }
 
-            .spectrum-section {
-                width: 100% !important;
-                padding: 0.8rem !important;
-                margin: 0 0 1rem 0 !important;
-            }
-
-            .spectrum-analyzer {
-                height: 60px !important;
-            }
-
-            .spectrum-dots {
-                display: none !important;
-            }
-
-            .vfd-bottom-section {
-                display: block !important;
-                width: 100% !important;
+            .album-info {
                 padding: 0 !important;
-                border: none !important;
-                margin: 0 !important;
             }
 
-            .station-list {
-                width: 100% !important;
-                display: flex !important;
-                flex-direction: column !important;
+            .album-title {
+                font-size: 1.8rem !important;
             }
 
-            .station-btn {
-                width: 100% !important;
-                padding: 0.8rem !important;
-                font-size: 0.75rem !important;
-                text-align: center !important;
-                margin-bottom: 0.5rem !important;
+            .album-date,
+            .album-duration {
+                font-size: 0.95rem !important;
             }
 
-            .now-playing {
-                width: 100% !important;
-                font-size: 0.7rem !important;
-                padding: 0.8rem !important;
-                text-align: center !important;
-                min-height: auto !important;
+            .album-credits {
+                font-size: 0.9rem !important;
             }
 
-            .sound-content {
-                width: 100% !important;
-                margin-top: 1.5rem !important;
-                padding-top: 1.5rem !important;
+            .album-action {
+                padding: 1rem 0 !important;
+                font-size: 0.95rem !important;
             }
 
             /* ===== KW RISING SECTION ===== */
@@ -1556,139 +1380,40 @@
 
     <!-- Sound by Ramsay Section -->
     <section class="sound-section" id="sound">
-        <div class="vfd-display">
-            <!-- Top Row -->
-            <div class="vfd-top-row">
-                <div>
-                    <div class="time-display" id="timeDisplay">12:00</div>
-                    <div class="memory-ams">
-                        <span>MEMORY</span>
-                        <span>AMS</span>
-                    </div>
-                </div>
-
-                <div class="peak-meter-section">
-                    <div class="peak-label">PEAK LEVEL METER</div>
-                    <div class="peak-bars">
-                        <div class="peak-bar-row" id="peakMeterL">
-                            <div class="peak-segment"></div>
-                            <div class="peak-segment"></div>
-                            <div class="peak-segment"></div>
-                            <div class="peak-segment"></div>
-                            <div class="peak-segment"></div>
-                            <div class="peak-segment"></div>
-                        </div>
-                    </div>
-                    <div class="db-labels">
-                        <span>dB</span>
-                        <span>-∞</span>
-                        <span>-20</span>
-                        <span>-15</span>
-                        <span>-10</span>
-                        <span>-7</span>
-                        <span>-5</span>
-                        <span>-3</span>
-                        <span>-1</span>
-                    </div>
-                </div>
-
-                <div class="vfd-right-indicators">
-                    <div class="vu-indicator">OVU00</div>
-                    <div class="red-lights">
-                        <div class="red-light"></div>
-                        <div class="red-light"></div>
-                        <div class="red-light"></div>
-                    </div>
-                    <div class="red-values">
-                        <span>0</span>
-                        <span>+1</span>
-                        <span>+3</span>
-                        <span>+5</span>
-                        <span>+8</span>
-                    </div>
-                    <div class="dolby-nr">DOLBY NR</div>
-                </div>
+        <div class="album-container">
+            <div class="album-artwork">
+                <button class="album-nav prev">←</button>
+                <img src="soundsbyramsay/covers/WAVESCover.jpg" alt="WAVES Album Cover">
+                <button class="album-nav next">→</button>
+                <div class="album-counter">1/1</div>
             </div>
-
-            <!-- Spectrum Analyzer -->
-            <div class="spectrum-section">
-                <div class="spectrum-analyzer" id="spectrumAnalyzer">
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                    <div class="spectrum-bar"></div>
-                </div>
-                <div class="spectrum-dots">
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                    <div class="spectrum-dot"></div>
-                </div>
-            </div>
-
-            <!-- Tuner Section -->
-            <div class="vfd-bottom-section">
-                <div class="tuner-section">
-                    <div class="frequency-large" id="freqDisplay">87.00</div>
-                    <div class="tuner-info-row">
-                        <span class="tuner-label-small">TUNE</span>
-                        <span class="tuner-label-small">6</span>
-                        <span class="tuner-label-small">FM</span>
-                        <span class="tuner-label-small">MHz</span>
-                    </div>
-                </div>
-
-                <div class="station-list">
-                    <button class="station-btn" data-station="https://playerservices.streamtheworld.com/api/livestream-redirect/WQHTFMAAC_SC" data-freq="97.1">HOT 97 - NYC</button>
-                    <button class="station-btn" data-station="https://ice64.securenetsystems.net/CKFG" data-freq="98.7">FLOW 98.7 - TORONTO</button>
-                    <button class="station-btn" data-station="https://playerservices.streamtheworld.com/api/livestream-redirect/WHTAFMAAC_SC" data-freq="107.9">HOT 107.9 - ATL</button>
-                    <button class="station-btn" data-station="https://stream.zeno.fm/omonrcmoy1vuv" data-freq="94.0">RJR 94 FM - JAMAICA</button>
-                    <div class="now-playing" id="nowPlaying">SELECT A STATION TO BEGIN...</div>
-                </div>
-            </div>
-
-            <div class="sound-content">
-                <div class="section-label">[ SOUND BY RAMSAY ]</div>
-                <h2 class="section-title">Audio Production<br>& Sound Design</h2>
-                <p class="section-description">
-                    Creating sonic landscapes and audio experiences that resonate. 
-                    From music production to sound design for digital experiences.
+            
+            <div class="album-info">
+                <h2 class="album-title">WAVES</h2>
+                <p class="album-date">October 18, 2017</p>
+                <p class="album-duration">31:00</p>
+                
+                <p class="album-credits">
+                    Recorded, Written and Produced by Anthony Ramsay 'Almighty'
                 </p>
+                
+                <div class="album-actions">
+                    <a href="https://distrokid.com/hyperfollow/39a04ff37b7ce10da33f/b1nU" target="_blank" class="album-action">
+                        <span>Stream</span>
+                        <span class="dot"></span>
+                    </a>
+                    <a href="https://www.youtube.com/playlist?list=PLFpPlRRRnUI8DVMt0ZGJcDP_gj76y15M1" target="_blank" class="album-action">
+                        <span>Video</span>
+                        <span class="dot"></span>
+                    </a>
+                    <div class="album-action disabled">
+                        <span>Merch</span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="section-number">02</div>
     </section>
-
-    <audio id="radioPlayer" preload="none" crossorigin="anonymous"></audio>
 
     <!-- KW Rising Section -->
     <section class="kw-section" id="kw-rising">
@@ -1927,145 +1652,6 @@
                     });
                 }
             });
-        });
-
-        // Radio player functionality with visualizations
-        const radioPlayer = document.getElementById('radioPlayer');
-        const nowPlaying = document.getElementById('nowPlaying');
-        const freqDisplay = document.getElementById('freqDisplay');
-        const stationButtons = document.querySelectorAll('.station-btn');
-        const spectrumBars = document.querySelectorAll('.spectrum-bar');
-        const peakSegments = document.querySelectorAll('.peak-segment');
-        const redLights = document.querySelectorAll('.red-light');
-        let currentStation = null;
-        let animationInterval = null;
-        let peakInterval = null;
-
-        // Animate spectrum analyzer
-        function animateSpectrum() {
-            spectrumBars.forEach((bar, index) => {
-                const randomHeight = Math.random() * 100 + 15;
-                const delay = index * 0.015;
-                setTimeout(() => {
-                    bar.style.height = randomHeight + '%';
-                }, delay * 1000);
-            });
-        }
-
-        // Animate peak meters
-        function animatePeakMeter() {
-            const activeCount = Math.floor(Math.random() * 6) + 1;
-            peakSegments.forEach((segment, index) => {
-                if (index < activeCount) {
-                    if (index < 5) {
-                        segment.classList.add('active-green');
-                        segment.classList.remove('active-red');
-                    } else {
-                        segment.classList.add('active-red');
-                        segment.classList.remove('active-green');
-                    }
-                } else {
-                    segment.classList.remove('active-green', 'active-red');
-                }
-            });
-
-            // Animate red lights
-            const redCount = Math.floor(Math.random() * 3);
-            redLights.forEach((light, index) => {
-                if (index < redCount) {
-                    light.classList.add('active');
-                } else {
-                    light.classList.remove('active');
-                }
-            });
-        }
-
-        // Start visualizations
-        function startVisualizations() {
-            if (animationInterval) clearInterval(animationInterval);
-            if (peakInterval) clearInterval(peakInterval);
-            
-            animationInterval = setInterval(animateSpectrum, 90);
-            peakInterval = setInterval(animatePeakMeter, 140);
-        }
-
-        // Stop visualizations
-        function stopVisualizations() {
-            if (animationInterval) clearInterval(animationInterval);
-            if (peakInterval) clearInterval(peakInterval);
-            
-            spectrumBars.forEach(bar => bar.style.height = '3px');
-            peakSegments.forEach(segment => {
-                segment.classList.remove('active-green', 'active-red');
-            });
-            redLights.forEach(light => light.classList.remove('active'));
-        }
-
-        stationButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const stationUrl = this.getAttribute('data-station');
-                const stationName = this.textContent;
-                const frequency = this.getAttribute('data-freq');
-
-                // Update frequency display
-                freqDisplay.textContent = frequency;
-
-                // Remove active class from all buttons
-                stationButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-
-                // If clicking the same station, toggle play/pause
-                if (currentStation === stationUrl) {
-                    if (radioPlayer.paused) {
-                        radioPlayer.play();
-                        nowPlaying.textContent = `♫ NOW PLAYING: ${stationName}`;
-                        startVisualizations();
-                    } else {
-                        radioPlayer.pause();
-                        nowPlaying.textContent = `⏸ PAUSED: ${stationName}`;
-                        stopVisualizations();
-                    }
-                } else {
-                    // Load and play new station via proxy (bypasses CORS)
-                    currentStation = stationUrl;
-                    radioPlayer.src = '/radio?url=' + encodeURIComponent(stationUrl);
-                    nowPlaying.textContent = `⏳ TUNING TO: ${stationName}`;
-                    
-                    radioPlayer.load();
-                    radioPlayer.play().then(() => {
-                        nowPlaying.textContent = `♫ NOW PLAYING: ${stationName}`;
-                        startVisualizations();
-                    }).catch(err => {
-                        nowPlaying.textContent = `⚠ ERROR: CANNOT CONNECT TO ${stationName}`;
-                        stopVisualizations();
-                        console.error('Playback error:', err);
-                    });
-                }
-            });
-        });
-
-        // Update display when audio starts playing
-        radioPlayer.addEventListener('playing', () => {
-            const activeBtn = document.querySelector('.station-btn.active');
-            if (activeBtn) {
-                nowPlaying.textContent = `♫ NOW PLAYING: ${activeBtn.textContent}`;
-                startVisualizations();
-            }
-        });
-
-        // Handle loading state
-        radioPlayer.addEventListener('waiting', () => {
-            const activeBtn = document.querySelector('.station-btn.active');
-            if (activeBtn) {
-                nowPlaying.textContent = `⏳ BUFFERING: ${activeBtn.textContent}`;
-            }
-        });
-
-        // Stop visualizations when paused
-        radioPlayer.addEventListener('pause', () => {
-            stopVisualizations();
         });
 
         // ========== ACTIVE NAV STATE ON SCROLL ==========
