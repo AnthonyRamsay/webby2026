@@ -205,9 +205,13 @@
             left: 0;
             right: 0;
             padding: 2rem;
-            background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            padding-top: 4rem;
+            background: linear-gradient(to top, 
+                rgba(255,255,255,0.9) 0%, 
+                rgba(255,255,255,0.7) 20%, 
+                rgba(255,255,255,0.4) 50%, 
+                rgba(255,255,255,0.1) 75%, 
+                transparent 100%);
         }
 
         .card-number {
@@ -1870,7 +1874,7 @@
             <h3 id="modalAppName">App Name</h3>
             <p class="app-tagline" id="modalAppTagline">Tagline here</p>
             <span class="coming-soon-badge">COMING SOON</span>
-            <p>Be the first to know when this launches. Sign up for early access.</p>
+            <p>Be the first to know when this launches.<br>Sign up for early access.</p>
             <form id="appSignupForm">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="hidden" name="app" id="modalAppHidden">
