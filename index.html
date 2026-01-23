@@ -151,6 +151,15 @@
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        .gallery-item * {
+            pointer-events: none;
+        }
+
+        .gallery-item {
+            pointer-events: auto;
         }
 
         .gallery-item:hover {
