@@ -52,8 +52,9 @@
         }
 
         .main-title {
+            font-family: Helvetica, Arial, sans-serif;
             font-size: clamp(4rem, 12vw, 10rem);
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: 0.02em;
             line-height: 0.95;
             margin-bottom: 2.5rem;
@@ -100,7 +101,7 @@
 
         /* Gallery Section */
         .gallery-section {
-            min-height: auto;
+            min-height: 100vh;
             padding: 4rem;
             position: relative;
             display: flex;
@@ -387,9 +388,12 @@
 
         /* Sound by Ramsay - Album Display */
         .sound-section {
-            min-height: auto;
+            min-height: 100vh;
             padding: 4rem;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             background: #0a0a0a;
             background-image: 
                 radial-gradient(ellipse at 15% 85%, rgba(139, 90, 43, 0.5) 0%, transparent 45%),
@@ -548,7 +552,7 @@
 
         /* KW Rising Section */
         .kw-section {
-            min-height: auto;
+            min-height: 100vh;
             padding: 4rem;
             position: relative;
             display: flex;
@@ -683,7 +687,7 @@
 
         /* Studio Slop Section */
         .studio-section {
-            min-height: auto;
+            min-height: 100vh;
             padding: 4rem;
             position: relative;
             display: flex;
