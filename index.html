@@ -2164,22 +2164,32 @@
         appSignupForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(appSignupForm);
-            const email = formData.get('email');
-            const app = formData.get('app');
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch('https://formspree.io/f/mzdedlwo', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Store in localStorage (can be replaced with actual backend)
-            const signups = JSON.parse(localStorage.getItem('appSignups') || '[]');
-            signups.push({ email, app, date: new Date().toISOString() });
-            localStorage.setItem('appSignups', JSON.stringify(signups));
+                if (response.ok) {
+                    // Show success message
+                    appSignupForm.style.display = 'none';
+                    signupSuccess.classList.add('show');
 
-            // Show success message
-            appSignupForm.style.display = 'none';
-            signupSuccess.classList.add('show');
-
-            // Close modal after delay
-            setTimeout(() => {
-                appModal.classList.remove('show');
-            }, 2000);
+                    // Close modal after delay
+                    setTimeout(() => {
+                        appModal.classList.remove('show');
+                    }, 2000);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            }
         });
 
         // Close on escape key
