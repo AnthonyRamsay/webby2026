@@ -110,23 +110,7 @@
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
             margin-bottom: 2rem;
-        }
-
-        .header-left {
-            flex: 1;
-        }
-
-        .section-header .section-description {
-            flex: 1;
-            max-width: 400px;
-            margin: 0;
-            text-align: left;
-            padding-top: 1.5rem;
         }
 
         .section-label {
@@ -1099,15 +1083,8 @@
             }
 
             .section-header {
-                flex-direction: column !important;
-                gap: 1rem !important;
                 margin-bottom: 1.5rem !important;
                 width: 100% !important;
-            }
-
-            .section-header .section-description {
-                max-width: 100% !important;
-                padding-top: 0 !important;
             }
 
             .section-title {
@@ -1147,6 +1124,9 @@
 
             /* ===== SOUND/ALBUM SECTION ===== */
             .sound-section {
+                height: auto !important;
+                min-height: auto !important;
+                padding: 2rem 1rem !important;
                 background: #0a0a0a !important;
                 background-image: 
                     radial-gradient(ellipse at 15% 85%, rgba(139, 90, 43, 0.5) 0%, transparent 45%),
@@ -1154,26 +1134,74 @@
             }
 
             .sound-header {
-                margin-bottom: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .sound-header .section-title {
+                font-size: 1.5rem !important;
             }
 
             .album-container {
                 grid-template-columns: 1fr !important;
-                gap: 2rem !important;
+                gap: 1rem !important;
+                max-height: none !important;
             }
 
             .album-artwork {
-                aspect-ratio: 1 !important;
-                padding: 1rem !important;
+                aspect-ratio: auto !important;
+                padding: 0.5rem !important;
+                max-height: 35vh !important;
+            }
+
+            .album-artwork img {
+                max-height: 30vh !important;
             }
 
             .album-nav {
-                font-size: 1.5rem !important;
-                padding: 0.5rem !important;
+                font-size: 1.2rem !important;
+                padding: 0.3rem !important;
+            }
+
+            .album-counter {
+                display: none !important;
             }
 
             .album-info {
                 padding: 0 !important;
+            }
+
+            .album-title {
+                font-size: 1.4rem !important;
+            }
+
+            .album-date,
+            .album-duration {
+                font-size: 0.85rem !important;
+            }
+
+            .album-credits {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .album-actions {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+                border-top: none !important;
+            }
+
+            .album-action {
+                flex: 1 !important;
+                padding: 0.75rem !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                border-radius: 8px !important;
+                justify-content: center !important;
+                font-size: 0.8rem !important;
+            }
+
+            .album-action .dot {
+                display: none !important;
             }
 
             .album-title {
@@ -1399,10 +1427,8 @@
     <!-- Built by Ramsay Gallery Section -->
     <section class="gallery-section" id="built">
         <div class="section-header">
-            <div class="header-left">
-                <div class="section-label">[ BUILT BY RAMSAY ]</div>
-                <h2 class="section-title">Apps & Projects<br>Built with Intention</h2>
-            </div>
+            <div class="section-label">[ BUILT BY RAMSAY ]</div>
+            <h2 class="section-title">Apps & Projects<br>Built with Intention</h2>
             <p class="section-description">
                 Crafting digital experiences that bridge creativity and functionality, 
                 each project is built with purpose and attention to detail.
@@ -1511,10 +1537,8 @@
     <!-- KW Rising Section -->
     <section class="kw-section" id="kw-rising">
         <div class="section-header">
-            <div class="header-left">
-                <div class="section-label">[ KW RISING ]</div>
-                <h2 class="section-title">Community Impact<br>Dashboard</h2>
-            </div>
+            <div class="section-label">[ KW RISING ]</div>
+            <h2 class="section-title">Community Impact<br>Dashboard</h2>
             <p class="section-description">
                 Showcasing the Kitchener-Waterloo community through authentic storytelling 
                 and local culture on Instagram, connecting people and celebrating what makes KW unique.
@@ -1634,10 +1658,8 @@
     <!-- Studio Slop Section -->
     <section class="studio-section" id="studio">
         <div class="section-header">
-            <div class="header-left">
-                <div class="section-label">[ STUDIO SLOP ]</div>
-                <h2 class="section-title">Video Content<br>& Creative Experiments</h2>
-            </div>
+            <div class="section-label">[ STUDIO SLOP ]</div>
+            <h2 class="section-title">Video Content<br>& Creative Experiments</h2>
             <p class="section-description">
                 Short-form content and creative explorations. 
                 Raw, authentic, and unfiltered creative work.
