@@ -53,11 +53,11 @@
 
         .main-title {
             font-family: Helvetica, Arial, sans-serif;
-            font-size: clamp(4rem, 12vw, 10rem);
+            font-size: clamp(3rem, 9vw, 6rem);
             font-weight: 700;
             letter-spacing: 0.02em;
             line-height: 0.95;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             text-align: left;
         }
 
@@ -388,12 +388,13 @@
 
         /* Sound by Ramsay - Album Display */
         .sound-section {
-            min-height: 100vh;
-            padding: 4rem;
+            height: 100vh;
+            padding: 5rem 4rem 2rem 4rem;
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            overflow: hidden;
             background: #0a0a0a;
             background-image: 
                 radial-gradient(ellipse at 15% 85%, rgba(139, 90, 43, 0.5) 0%, transparent 45%),
@@ -402,20 +403,24 @@
 
         .sound-header {
             max-width: 1200px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 1.5rem auto;
         }
 
         .sound-header .section-label {
             color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
         }
 
         .sound-header .section-title {
             color: #fff;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
         }
 
         .sound-header .section-description {
             color: rgba(255, 255, 255, 0.7);
             margin-left: 0;
+            font-size: 0.9rem;
         }
 
         .album-container {
@@ -423,23 +428,25 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            gap: 3rem;
+            align-items: center;
+            flex: 1;
+            max-height: calc(100vh - 200px);
         }
 
         .album-artwork {
             position: relative;
             background: rgba(255, 255, 255, 0.05);
-            aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.5rem;
+            max-height: 100%;
         }
 
         .album-artwork img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 55vh;
             object-fit: contain;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
@@ -478,34 +485,34 @@
         }
 
         .album-info {
-            padding: 2rem 0;
+            padding: 1rem 0;
             color: #fff;
         }
 
         .album-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             color: #fff;
         }
 
         .album-date {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
         }
 
         .album-duration {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .album-credits {
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            line-height: 1.5;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-style: italic;
         }
 
@@ -517,11 +524,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 0;
+            padding: 0.8rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             text-decoration: none;
             color: #fff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             cursor: pointer;
         }
